@@ -50,6 +50,7 @@ $ java com.code.ADBMain E:/Android Tools/platform-tools/
 ## Modes
 #### `1` Uninstall single package
 #### `2` Uninstall apps listed in packages.txt or those starting with a prefix
+<h1>Better Copy than Orginal</h1>
 
 
 
