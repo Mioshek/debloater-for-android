@@ -43,20 +43,8 @@ public class ADBExecutor{
         procBuilder.directory(new File(adbDir));
         scanner = new Scanner(System.in);
         //bloated packages file
-        URL url = ADBMain.class.getResource("/packages.txt");
-        if(url == null){
-            System.err.println("Missing package names");
-            missingPackages = true;
-            return;
-        }
-        try{
-            InputStream packagesStream = url.openStream();
-            String readLines = Utilities.readFully(packagesStream);
-            allBloatedPackages = Utilities.readAllLines(readLines);
-        }catch (IOException ioException){
-            System.err.println("Error reading packages from file.. exiting");
-            return;
-        }
+        String path = JavaFix.Companion.getFilePath();
+        List<String> allBloatedPackages = JavaFix.Companion.getPackages(path);
         System.out.println(allBloatedPackages.size() + " packages loaded");
         System.out.println(allBloatedPackages);
     }
